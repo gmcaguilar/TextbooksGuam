@@ -5,3 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+jason = User.create(first_name: 'Jason', last_name: 'Bacani', email: 'jason@email.com', password: 'jason', password_confirmation: 'jason')
+Post.create(title: 'Making Sense of Micronesia', authors: 'Francis X. Hezel', isbn13: '9780824836610', description: 'Good', user_id: jason.id)
