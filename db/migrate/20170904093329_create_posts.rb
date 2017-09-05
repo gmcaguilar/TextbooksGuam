@@ -6,6 +6,7 @@ class CreatePosts < ActiveRecord::Migration[5.1]
 			t.string :isbn10
 			t.string :isbn13
 			t.text :description
+      t.integer :price
 			t.references :user
       t.timestamps
     end
