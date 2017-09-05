@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20170904093329) do
     t.string "isbn10"
     t.string "isbn13"
     t.text "description"
+    t.integer "price"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
