@@ -5,6 +5,10 @@
 		<p><%= post.isbn10 %></p>
 		<p><%= post.isbn13 %></p>
 		<p><%= post.price %></p>
-		<%= link_to "(View full post)", post_path(post) %>
+		<% if post.editable?(current_user) %>
+			<%= link_to "(Edit post)", edit_post_path(post) %>
+		<% else %>
+			<%= link_to "(View full post)", post_path(post) %>
+		<% end %>
 	</div>
 <% end %>
