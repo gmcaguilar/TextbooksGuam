@@ -2,9 +2,7 @@
   <div class="container user-info">
     <div class="row">
       <h2>Account Info</h2>
-      <% if @user.editable?(current_user) %>
-        <%= link_to "(edit)", edit_user_path(@user) %>
-      <% end %>
+      <%= link_to "(edit)", edit_user_path(@user) if @user.editable?(current_user) %>
     </div>
     <p><b>Name:</b> <%= @user.first_name %> <%= @user.last_name %></p>
     <p><b>Email:</b> <%= @user.email %></p>
