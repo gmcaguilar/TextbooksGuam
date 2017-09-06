@@ -1,0 +1,14 @@
+<nav class="navbar">
+  <div class="container-fluid">
+    <div class="navbar-brand">
+      <%= link_to "TextbooksGuam.com", root_path %>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><%= link_to "Log in", login_path if current_user.nil? %></li>
+      <li><%= link_to "Sign up", signup_path if current_user.nil? %></li>
+      <li><%= link_to "Create post", create_path if !current_user.nil? %></li>
+      <li><%= link_to "Account", current_user if !current_user.nil? %></li>
+      <li><%= link_to "Log out (#{current_user.email})", logout_path if !current_user.nil? %></li>
+    </ul>
+  </div>
+</nav>
