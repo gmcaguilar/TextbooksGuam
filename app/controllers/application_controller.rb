@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   end
 
   def require_admin
-    redirect_to '/' unless current_user.admin?
+    redirect_to '/' unless current_user != nil && current_user.admin?
   end
 
 end
