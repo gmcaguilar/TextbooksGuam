@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   before_action :require_admin, only: [:index, :destroy]
-  before_action :require_ownership_permissions, only: [:show, :edit, :update]
+  before_action :require_ownership_permissions, only: [:edit, :update]
 
   def require_ownership_permissions
     redirect_to '/' unless current_user == User.find(params[:id])
