@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="col-sm-10 col-sm-offset-1">
+    <%= form_for(@post, :html => {:class => "form-group"}) do |f| %>
+      <%= f.text_field :title, :value => @post.title, :class => "form-control" %>
+      <%= f.text_field :authors, :value => @post.authors, :class => "form-control" %>
+      <%= f.text_field :isbn10, :value => @post.isbn10, :class => "form-control" %>
+      <%= f.text_field :isbn13, :value => @post.isbn13, :class => "form-control" %>
+      <%= f.text_area :description, :value => @post.description, :class => "form-control" %>
+      <%= f.text_field :price, :value => @post.price, :class => "form-control" %>
+      <%= f.submit "Update", :class => "btn btn-submit" %>
+    <% end %>
+  </div>
+</div>
