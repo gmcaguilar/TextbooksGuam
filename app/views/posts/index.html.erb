@@ -4,7 +4,7 @@
 		<p><%= post.authors %></p>
 		<p><%= post.isbn10 %></p>
 		<p><%= post.isbn13 %></p>
-		<p><%= post.description %></p>
 		<p><%= post.price %></p>
+		<%= link_to "(View full post)", post_path(post) %>
 	</div>
 <% end %>
