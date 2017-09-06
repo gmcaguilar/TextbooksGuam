@@ -1,6 +1,11 @@
 <div class="container">
   <div class="col-xs-12">
-    <h2 class="text-center"><%= @post.title %></h2>
+    <div class="row">
+      <h2 class="text-center"><%= @post.title %></h2>
+      <% if @post.editable?(current_user) %>
+  			<%= link_to "(Edit post)", edit_post_path(@post) %>
+      <% end %>
+    </div>
     <p><%= @post.authors %></p>
     <p><%= @post.isbn10 %></p>
     <p><%= @post.isbn13 %></p>
