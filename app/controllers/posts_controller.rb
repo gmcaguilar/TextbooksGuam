@@ -1,6 +1,15 @@
 class PostsController < ApplicationController
 
-	before_action :require_user, only: [:new, :create, :edit]
+	before_action :require_user, only: [:new, :create]
+	before_action :require_ownership_permissions, only: [:edit, :update]
+
+	def require_ownership_permissions
+		redirect_to '/' unless current_user == Post.find(params[:id]).user
+	end
+
+	def destroy
+
+	end
 
 	def index
 		@posts = Post.all
