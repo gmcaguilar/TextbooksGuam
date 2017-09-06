@@ -11,4 +11,12 @@ class User < ApplicationRecord
 		end
 	end
 
+	def editable?(user)
+		if user == nil
+			false
+		else
+			self == user
+		end
+	end
+
 end

@@ -1,5 +1,24 @@
 <div class="container">
-  <h2><%= @user.first_name %> <%= @user.last_name %></h2>
-  <p><%= @user.email %></p>
-  <p><%= @user.role %></p>
+  <div class="container user-info">
+    <div class="row">
+      <h2>Account Info</h2>
+      <% if @user.editable?(current_user) %>
+        <%= link_to "(edit)", edit_user_path(@user) %>
+      <% end %>
+    </div>
+    <p><b>Name:</b> <%= @user.first_name %> <%= @user.last_name %></p>
+    <p><b>Email:</b> <%= @user.email %></p>
+  </div>
+  <br>
+  <div class="user-posts">
+    <h2>Your Posts</h2>
+    <ul>
+    <% @posts.each do |p| %>
+      <li class="post">
+        <%= link_to "#{p.title}", p %>
+        <p><b>Price:</b> <%= p.price %></p>
+      </li>
+    <% end %>
+    </ul>
+  </div>
 </div>
